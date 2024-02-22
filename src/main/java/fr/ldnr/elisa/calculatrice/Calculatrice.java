@@ -5,13 +5,16 @@
 
 package fr.ldnr.elisa.calculatrice;
 
+import graphics.ButtonCalc;
+import graphics.Graphism;
+
 /**
  *
  * @author Elisa Bothy
  */
 public class Calculatrice {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) { 
+        Graphism g = new Graphism();
     }
 }
