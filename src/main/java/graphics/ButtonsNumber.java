@@ -51,7 +51,7 @@ public class ButtonsNumber {
     }
 
     private void assign() {
-        west.setLayout(new GridLayout(3,4));
+        west.setLayout(new GridLayout(4,3));
         jb1.setBackground(Color.GRAY);
         jb2.setBackground(Color.GRAY);
         jb3.setBackground(Color.GRAY);
