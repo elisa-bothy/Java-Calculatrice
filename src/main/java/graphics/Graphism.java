@@ -6,35 +6,34 @@
 package graphics;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 /**
  *
  * @author Elisa Bothy
  */
 public class Graphism extends JFrame {
+
     Calc north;
     ButtonCalc east;
     ButtonsNumber west;
 
     private static final long serialVersionUID = 1L;
-    public Graphism(){
+
+    public Graphism() {
         super("Ma calculatrice");
-        
+
         north = new Calc();
         east = new ButtonCalc();
         west = new ButtonsNumber();
-        
+
         assign();
-        
+
         //laisser la fenêtre s'autodimentionner par rapport au contenu
         this.pack();
         //centrer fenêtre
         this.setLocationRelativeTo(null);
-        
+
         //fermer la fenêtre quand on ferme avec la croix
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);

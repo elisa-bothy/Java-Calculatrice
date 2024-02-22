@@ -16,14 +16,16 @@ import javax.swing.JPanel;
  * @author Elisa Bothy
  */
 public class ButtonCalc {
+
     JButton jb1;
     JButton jb2;
     JButton jb3;
     JButton jb4;
     JButton jb5;
-    JButton jb6; 
+    JButton jb6;
     JPanel east;
-    public ButtonCalc(){
+
+    public ButtonCalc() {
         jb1 = new JButton("CE");
         jb2 = new JButton("C");
         jb3 = new JButton("+");
@@ -31,12 +33,12 @@ public class ButtonCalc {
         jb5 = new JButton("x");
         jb6 = new JButton("/");
         east = new JPanel();
-        
+
         assign();
     }
 
     private void assign() {
-        east.setLayout(new GridLayout(3,3));
+        east.setLayout(new GridLayout(3, 3));
         JButton[] buttons = {jb1, jb2, jb3, jb4, jb5, jb6};
         jb1.setForeground(Color.red);
         for (JButton button : buttons) {

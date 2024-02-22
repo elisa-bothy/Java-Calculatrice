@@ -26,11 +26,12 @@ public class ButtonsNumber {
     JButton jb7;
     JButton jb8;
     JButton jb9;
-    JButton jb10;  
+    JButton jb10;
     JButton jb11;
-    JButton jb12; 
+    JButton jb12;
     JPanel west;
-    public ButtonsNumber(){
+
+    public ButtonsNumber() {
         jb1 = new JButton("7");
         jb2 = new JButton("8");
         jb3 = new JButton("9");
@@ -44,16 +45,13 @@ public class ButtonsNumber {
         jb11 = new JButton(".");
         jb12 = new JButton("=");
         west = new JPanel();
-        
+
         assign();
-        
-        
-        
-        
+
     }
 
     private void assign() {
-        west.setLayout(new GridLayout(4,3));
+        west.setLayout(new GridLayout(4, 3));
         JButton[] buttons = {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
         for (JButton button : buttons) {
             button.setBackground(Color.LIGHT_GRAY);
@@ -63,4 +61,3 @@ public class ButtonsNumber {
         }
     }
 }
-

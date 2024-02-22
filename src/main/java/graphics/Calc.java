@@ -10,22 +10,22 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
 /**
  *
  * @author Elisa Bothy
  */
-public class Calc{
+public class Calc {
 
     JLabel jl;
     JPanel north;
     Border blackline;
-    public Calc(){
+
+    public Calc() {
         jl = new JLabel("0");
         north = new JPanel();
-        
+
         assign();
     }
 
