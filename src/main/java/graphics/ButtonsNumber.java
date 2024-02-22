@@ -5,6 +5,8 @@
 package graphics;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -52,30 +54,13 @@ public class ButtonsNumber {
 
     private void assign() {
         west.setLayout(new GridLayout(4,3));
-        jb1.setBackground(Color.GRAY);
-        jb2.setBackground(Color.GRAY);
-        jb3.setBackground(Color.GRAY);
-        jb4.setBackground(Color.GRAY);
-        jb5.setBackground(Color.GRAY);
-        jb6.setBackground(Color.GRAY);
-        jb7.setBackground(Color.GRAY);
-        jb8.setBackground(Color.GRAY);
-        jb9.setBackground(Color.GRAY);
-        jb10.setBackground(Color.GRAY);
-        jb11.setBackground(Color.GRAY);
-        jb12.setBackground(Color.GRAY);
-        west.add(jb1);
-        west.add(jb2);
-        west.add(jb3);
-        west.add(jb4);
-        west.add(jb5);
-        west.add(jb6);
-        west.add(jb7);
-        west.add(jb8);
-        west.add(jb9);
-        west.add(jb10);
-        west.add(jb11);
-        west.add(jb12);
+        JButton[] buttons = {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
+        for (JButton button : buttons) {
+            button.setBackground(Color.LIGHT_GRAY);
+            button.setFont(new Font("Bold", Font.BOLD, 30));
+            button.setPreferredSize(new Dimension(100, 75));
+            west.add(button);
+        }
     }
 }
 

@@ -5,9 +5,12 @@
 package graphics;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
 /**
@@ -27,7 +30,9 @@ public class Calc{
     }
 
     private void assign() {
-        jl.setBackground(Color.GRAY);
+        jl.setHorizontalAlignment(JLabel.RIGHT);
+        jl.setFont(new Font("Bold", Font.BOLD, 30));
+        jl.setPreferredSize(new Dimension(600, 75));
         north.add(jl);
         blackline = BorderFactory.createLineBorder(Color.black, 2);
         north.setBorder(blackline);

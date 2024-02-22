@@ -5,6 +5,8 @@
 package graphics;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -35,17 +37,13 @@ public class ButtonCalc {
 
     private void assign() {
         east.setLayout(new GridLayout(3,3));
-        jb1.setBackground(Color.YELLOW);
-        jb2.setBackground(Color.YELLOW);
-        jb3.setBackground(Color.YELLOW);
-        jb4.setBackground(Color.YELLOW);
-        jb5.setBackground(Color.YELLOW);
-        jb6.setBackground(Color.YELLOW);
-        east.add(jb1);
-        east.add(jb2);
-        east.add(jb3);
-        east.add(jb4);
-        east.add(jb5);
-        east.add(jb6);
+        JButton[] buttons = {jb1, jb2, jb3, jb4, jb5, jb6};
+        jb1.setForeground(Color.red);
+        for (JButton button : buttons) {
+            button.setBackground(new Color(255, 255, 191));
+            button.setFont(new Font("Bold", Font.BOLD, 30));
+            button.setPreferredSize(new Dimension(150, 100));
+            east.add(button);
+        }
     }
 }
