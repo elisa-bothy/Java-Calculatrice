@@ -10,31 +10,60 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 /**
  *
  * @author Elisa Bothy
  */
-public class Calc {
+public class Calc extends JPanel {
+    
+    private static final long serialVersionUID = 1L;
+    private JLabel jl;
+    private JPanel north;
 
-    JLabel jl;
-    JPanel north;
-    Border blackline;
+    /**
+     * @return the jl
+     */
+    public JLabel getJl() {
+        return jl;
+    }
+
+    /**
+     * @param jl the jl to set
+     */
+    public void setJl(JLabel jl) {
+        this.jl = jl;
+    }
+
+    /**
+     * @return the north
+     */
+    public JPanel getNorth() {
+        return north;
+    }
+
+    /**
+     * @param north the north to set
+     */
+    public void setNorth(JPanel north) {
+        this.north = north;
+    }
+
+    
 
     public Calc() {
         jl = new JLabel("0");
-        north = new JPanel();
 
         assign();
     }
 
     private void assign() {
-        jl.setHorizontalAlignment(JLabel.RIGHT);
-        jl.setFont(new Font("Bold", Font.BOLD, 30));
-        jl.setPreferredSize(new Dimension(600, 75));
-        north.add(jl);
-        blackline = BorderFactory.createLineBorder(Color.black, 2);
-        north.setBorder(blackline);
+        getJl().setHorizontalAlignment(JLabel.RIGHT);
+        getJl().setFont(new Font("Bold", Font.BOLD, 30));
+        getJl().setPreferredSize(new Dimension(600, 75));
+        this.add(getJl());
+        this.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.black, 3),
+                BorderFactory.createEmptyBorder(3, 3, 3, 3)));
     }
 }

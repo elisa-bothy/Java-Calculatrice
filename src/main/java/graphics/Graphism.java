@@ -28,7 +28,9 @@ public class Graphism extends JFrame {
         west = new ButtonsNumber();
 
         assign();
-
+        
+        //empêche d'agrandir la fenêtre
+        this.setResizable(false);
         //laisser la fenêtre s'autodimentionner par rapport au contenu
         this.pack();
         //centrer fenêtre
@@ -39,9 +41,10 @@ public class Graphism extends JFrame {
         this.setVisible(true);
     }
 
-    private void assign() {
-        this.getContentPane().add(north.north, BorderLayout.NORTH);
-        this.getContentPane().add(east.east, BorderLayout.CENTER);
-        this.getContentPane().add(west.west, BorderLayout.WEST);
+    private void assign() { 
+        this.getContentPane().setLayout(new BorderLayout(2, 3));
+        this.getContentPane().add(north, BorderLayout.NORTH);
+        this.getContentPane().add(east, BorderLayout.CENTER);
+        this.getContentPane().add(west, BorderLayout.WEST);
     }
 }

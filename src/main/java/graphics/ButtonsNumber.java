@@ -8,6 +8,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -15,49 +18,64 @@ import javax.swing.JPanel;
  *
  * @author Elisa Bothy
  */
-public class ButtonsNumber {
+public class ButtonsNumber extends JPanel{
 
-    JButton jb1;
-    JButton jb2;
-    JButton jb3;
-    JButton jb4;
-    JButton jb5;
-    JButton jb6;
-    JButton jb7;
-    JButton jb8;
-    JButton jb9;
-    JButton jb10;
-    JButton jb11;
-    JButton jb12;
-    JPanel west;
+    private String messageButton[] = {
+        "7", "8", "9", 
+        "4", "5", "6", 
+        "1", "2", "3", 
+        "0", ".", "="
+    };
+    private ArrayList<JButton> buttons;
+    private static final long serialVersionUID = 1L;
+    
+    /**
+     * @return the messageButton
+     */
+    public String[] getMessageButton() {
+        return messageButton;
+    }
 
+    /**
+     * @param messageButton the messageButton to set
+     */
+    public void setMessageButton(String[] messageButton) {
+        this.messageButton = messageButton;
+    }
+
+    /**
+     * @return the buttons
+     */
+    public ArrayList<JButton> getButtons() {
+        return buttons;
+    }
+
+    /**
+     * @param buttons the buttons to set
+     */
+    public void setButtons(ArrayList<JButton> buttons) {
+        this.buttons = buttons;
+    }
+
+   
     public ButtonsNumber() {
-        jb1 = new JButton("7");
-        jb2 = new JButton("8");
-        jb3 = new JButton("9");
-        jb4 = new JButton("4");
-        jb5 = new JButton("5");
-        jb6 = new JButton("6");
-        jb7 = new JButton("1");
-        jb8 = new JButton("2");
-        jb9 = new JButton("3");
-        jb10 = new JButton("0");
-        jb11 = new JButton(".");
-        jb12 = new JButton("=");
-        west = new JPanel();
-
+        this.buttons = new ArrayList<>();
         assign();
 
     }
 
     private void assign() {
-        west.setLayout(new GridLayout(4, 3));
-        JButton[] buttons = {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
-        for (JButton button : buttons) {
-            button.setBackground(Color.LIGHT_GRAY);
-            button.setFont(new Font("Bold", Font.BOLD, 30));
-            button.setPreferredSize(new Dimension(100, 75));
-            west.add(button);
+        this.setLayout(new GridLayout(4, 3, 2, 2));
+        for (String s : getMessageButton()) {
+            JButton jb = new JButton(s);
+            jb.addActionListener((ActionEvent ae) -> {
+                System.out.println(s);
+            });
+            jb.setBackground(Color.LIGHT_GRAY);
+            jb.setFont(new Font("Bold", Font.BOLD, 30));
+            jb.setPreferredSize(new Dimension(100, 75));
+            getButtons().add(jb);
+            this.add(jb);
         }
     }
 }
