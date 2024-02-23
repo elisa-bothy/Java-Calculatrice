@@ -57,9 +57,6 @@ public class ButtonCalc extends JPanel {
         this.setLayout(new GridLayout(3, 3, 2, 2));
         for (String s : getMessageButton()) {
             JButton jb = new JButton(s);
-            jb.addActionListener((ActionEvent ae) -> {
-                System.out.println(s);
-            });
             jb.setBackground(new Color(255, 255, 191));
             jb.setFont(new Font("Bold", Font.BOLD, 30));
             jb.setPreferredSize(new Dimension(150, 100));

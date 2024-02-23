@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  *
  * @author Elisa Bothy
  */
-public class Calc extends JPanel {
+public class Display extends JPanel {
     
     private static final long serialVersionUID = 1L;
     private JLabel jl;
@@ -51,8 +51,8 @@ public class Calc extends JPanel {
 
     
 
-    public Calc() {
-        jl = new JLabel("0");
+    public Display() {
+        jl = new JLabel("");
 
         assign();
     }

@@ -69,7 +69,7 @@ public class ButtonsNumber extends JPanel{
         for (String s : getMessageButton()) {
             JButton jb = new JButton(s);
             jb.addActionListener((ActionEvent ae) -> {
-                System.out.println(s);
+                System.out.println(jb.getText());
             });
             jb.setBackground(Color.LIGHT_GRAY);
             jb.setFont(new Font("Bold", Font.BOLD, 30));

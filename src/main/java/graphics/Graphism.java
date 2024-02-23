@@ -6,6 +6,9 @@
 package graphics;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -14,7 +17,7 @@ import javax.swing.JFrame;
  */
 public class Graphism extends JFrame {
 
-    Calc north;
+    Display north;
     ButtonCalc east;
     ButtonsNumber west;
 
@@ -23,11 +26,12 @@ public class Graphism extends JFrame {
     public Graphism() {
         super("Ma calculatrice");
 
-        north = new Calc();
+        north = new Display();
         east = new ButtonCalc();
         west = new ButtonsNumber();
 
-        assign();
+        initGui();
+        initEvents();
         
         //empêche d'agrandir la fenêtre
         this.setResizable(false);
@@ -41,10 +45,18 @@ public class Graphism extends JFrame {
         this.setVisible(true);
     }
 
-    private void assign() { 
+    private void initGui() { 
         this.getContentPane().setLayout(new BorderLayout(2, 3));
         this.getContentPane().add(north, BorderLayout.NORTH);
         this.getContentPane().add(east, BorderLayout.CENTER);
         this.getContentPane().add(west, BorderLayout.WEST);
     }
-}
+
+    private void initEvents() {
+        for (JButton jb : west.getButtons()){
+            jb.addActionListener((ActionEvent ae) -> {
+                north.getJl().setText(north.getJl().getText()+jb.getText());
+            });
+        }
+    }
+   }
