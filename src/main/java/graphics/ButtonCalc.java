@@ -20,7 +20,10 @@ import javax.swing.JPanel;
 public class ButtonCalc extends JPanel {
 
     private static final long serialVersionUID = 1L;
-    private String messageButton[] = {"CE", "C", "+", "-", "x", "/"};
+    private String messageButton[] = {
+        "CE", "C", "+", 
+        "-", "x", "/"
+    };
     private ArrayList<JButton> buttons;
 
     /**

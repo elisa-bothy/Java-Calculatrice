@@ -55,7 +55,10 @@ public class Graphism extends JFrame {
     private void initEvents() {
         for (JButton jb : west.getButtons()){
             jb.addActionListener((ActionEvent ae) -> {
-                north.getJl().setText(north.getJl().getText()+jb.getText());
+                if(!jb.getText().equals("=")){
+                    north.getJl().setText(north.getJl().getText()+jb.getText());
+                }
+                
             });
         }
     }
