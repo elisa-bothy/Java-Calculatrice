@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -57,8 +58,26 @@ public class Graphism extends JFrame {
                 if(!jb.getText().equals("=")){
                     north.getJl().setText(north.getJl().getText()+jb.getText());
                 }
+                else{
+                    JOptionPane.showMessageDialog(
+                        null, 
+                        "Je ne sais pas encore faire de calcul..." , 
+                        "Oups", 
+                        JOptionPane.ERROR_MESSAGE
+                    );
+                }
                 
             });
+            
+        }
+        for (JButton jb : east.getButtons()){
+            jb.addActionListener((ActionEvent ae) -> {
+                if(jb.getText().equals("C")||jb.getText().equals("CE")){
+                    north.getJl().setText("");
+                }
+                
+            });
+            
         }
     }
    }
