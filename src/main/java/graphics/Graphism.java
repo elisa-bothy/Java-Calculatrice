@@ -55,10 +55,16 @@ public class Graphism extends JFrame {
     private void initEvents() {
         for (JButton jb : west.getButtons()){
             jb.addActionListener((ActionEvent ae) -> {
-                if(!jb.getText().equals("=")){
-                    north.getJl().setText(north.getJl().getText()+jb.getText());
-                }
-                else{
+                if(!(jb.getText().equals("=") )){
+                    if((north.getJl().getText().equals("0") && (!jb.getText().equals(".")))){
+                        north.getJl().setText(jb.getText());
+                    }
+                    else{
+                        if((!(north.getJl().getText().contains(".") && jb.getText().equals(".")))){
+                        north.getJl().setText(north.getJl().getText()+jb.getText());}
+                    }
+                    
+                }else{
                     JOptionPane.showMessageDialog(
                         null, 
                         "Je ne sais pas encore faire de calcul..." , 
@@ -80,4 +86,4 @@ public class Graphism extends JFrame {
             
         }
     }
-   }
+}
